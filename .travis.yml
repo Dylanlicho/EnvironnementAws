@@ -6,3 +6,14 @@ services:
 - docker
 after_deploy:
 - echo "done deploying"
+deploy:
+provider: elasticbeanstalk
+access_key_id: $ACCESSKEYID
+secret_access_key:
+secure: "$SECRETACCESSKEY"
+region: "eu-west-3"
+app: "aws"
+env: "aws-dev"
+bucket_name: "aws-dev2222.eu-west-3.elasticbeanstalk.com"
+on:
+branch: master
